@@ -1,0 +1,15 @@
+/.git
+/data/*
+/data_part/*
+/.idea
+/_pycache_
+checkpoints/V_seg_late/
+/model_hub/I_seg_pre/*
+/model_hub/V_seg_pre/*
+/visualization/*
+*.log
+
+/output/*
+
+*.pyc
+__pycache__/

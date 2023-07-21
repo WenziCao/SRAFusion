@@ -1,0 +1,49 @@
+DEVICE: 'cuda' # default='cuda', help='device id (i.e. 0 or 0,1 or cpu)'
+LOGGER:
+  VERBOSITY: 1
+  NAME: 'SRA_OSTG_TRAIN'
+
+MODEL:
+  FUSION_NET:
+    NAME: 'FusionNet'
+    OUTPUT: 1
+    SAVE_FEA_LIST: []
+    OSTG_TYPE: 'SRA_OSTG' # The position where the one-stage training fusion model is placed
+
+  SEG_NET:
+    V_NAME: 'RgbSeg' # classname of the vi_seg_net
+    I_NAME: 'TSeg' # classname of the ir_seg_net
+    BACKBONE: 'deeplabv3plus_resnet101' # type=str, default='deeplabv3plus_resnet101'
+    NUM_CLASSES: 9 # num_classes', type=int, default=9
+    OUTPUT_STRIDE: 8 # output_stride", type=int, default=8, choices=[8, 16]
+    SEPARABLE_CONV: False # separable_conv", default=False, help="apply separable conv to decoder and aspp"
+    PRETRAINED_BACKBONE: False
+    TYPEV: 'V_seg_pre' # Where the pre-trained visible segmentation model is placed
+    TYPEI: 'I_seg_pre' # Where the pre-trained infrared segmentation model is placed
+
+LOSS:
+  FUSION_LOSS:
+    NAME: 'SRAFLoss' # the classname of fusion loss
+
+TRAINER:
+  OPTIM:
+    FS_LR_START: 0.01
+    LR_DECAY: 0.95
+
+  RESUME: False # Whether to start training from where it was interrupted
+  START_EPOCH: 1
+  EPOCH: 50
+  PRETR_SEG_EP: 50
+  SAVE_PIC: False
+  SV_ER_EP: 10
+
+
+DATASET:
+  NAME: 'MSRSDataSet'
+  DATASET_SPLIT: 'train'
+  DATA_DIR_VIS: './data/MSRS/Visible/train/MSRS/'
+  DATA_DIR_IR: './data/MSRS/Infrared/train/MSRS/'
+  DATA_DIR_LABEL: './data/MSRS/Label/train/MSRS/'
+  DROP_LAST: True
+  BATCH_SIZE: 16
+  NUM_WORKERS: 4

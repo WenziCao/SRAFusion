@@ -1,0 +1,26 @@
+DEVICE: 'cuda' # default='cuda', help='device id (i.e. 0 or 0,1 or cpu)'
+LOGGER:
+  VERBOSITY: 1
+  NAME: 'ISEG_TEST'
+
+MODEL:
+  SEG_NET:
+    I_NAME: 'TSeg' # classname of the vi_seg_net
+    BACKBONE: 'deeplabv3plus_resnet101' # type=str, default='deeplabv3plus_resnet101'
+    NUM_CLASSES: 9 # num_classes', type=int, default=9
+    OUTPUT_STRIDE: 8 # output_stride", type=int, default=8, choices=[8, 16]
+    SEPARABLE_CONV: False # separable_conv", default=False, help="apply separable conv to decoder and aspp"
+    PRETRAINED_BACKBONE: False
+    TYPEI: 'I_seg_pre' # Where the pre-trained visible segmentation model is placed
+
+TEST_EPOCH: 50
+
+DATASET:
+  NAME: 'MSRSDataSet'
+  DATASET_SPLIT: 'test'
+  DATA_DIR_VIS: './data/MSRS/Visible/test/MSRS/'
+  DATA_DIR_IR: './data/MSRS/Infrared/test/MSRS/'
+  DATA_DIR_LABEL: './data/MSRS/Label/test/MSRS/'
+  DROP_LAST: False
+  BATCH_SIZE: 1
+  NUM_WORKERS: 0

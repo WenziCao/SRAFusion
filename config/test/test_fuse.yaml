@@ -8,7 +8,7 @@ MODEL:
     NAME: 'FusionNet'
     OUTPUT: 1
     SAVE_FEA_LIST: []
-    STG_TYPE: 'SRA_OSTG' # The position where the training fusion model is placed, SRA_OSTG, SRA_TSTG.
+    STG_TYPE: 'SRA_TSTG' # The position where the training fusion model is placed, SRA_OSTG(one-stage), SRA_TSTG(two-stage).
 
 TEST_EPOCH: 50
 

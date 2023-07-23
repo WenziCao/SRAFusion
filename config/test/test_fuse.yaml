@@ -15,9 +15,9 @@ TEST_EPOCH: 50
 DATASET:
   NAME: 'MSRSDataSet'
   DATASET_SPLIT: 'test'
-  DATA_DIR_VIS: './data/MSRS/Visible/train/MSRS/'
-  DATA_DIR_IR: './data/MSRS/Infrared/train/MSRS/'
-  DATA_DIR_LABEL: './data/MSRS/Label/train/MSRS/'
+  DATA_DIR_VIS: './data/MSRS/Visible/test/MSRS/'
+  DATA_DIR_IR: './data/MSRS/Infrared/test/MSRS/'
+  DATA_DIR_LABEL: './data/MSRS/Label/test/MSRS/'
   DROP_LAST: False
   BATCH_SIZE: 1
   NUM_WORKERS: 0

@@ -94,6 +94,7 @@ class SRAFLoss(nn.Module):
         # if (epoch == 1) and save_pic:
             create_file(r'./visualization/save_pic/')
             create_file(r'./visualization/save_pic/' + 'epoch_{}'.format(epoch))
+            """
             self._save_mask(tensor=M_VT_IT, img_name=img_name, tso_name='Mask_bi', epoch=epoch)
             self._save_mask(tensor=M_VT_IF, img_name=img_name, tso_name='Mask_vtif', epoch=epoch)
             self._save_mask(tensor=M_VF_IT, img_name=img_name, tso_name='Mask_vfit', epoch=epoch)
@@ -112,6 +113,7 @@ class SRAFLoss(nn.Module):
             self._save_gra(tensor=x_gra_max_lac+M_VT_IF * y_grad+M_VF_IT * ir_grad+x_gra_max_TT, img_name=img_name, tso_name='grdt_gra', epoch=epoch)
             self._save_img(tensor=x_in_max, img_name=img_name, tso_name='x_ins_max', epoch=epoch)
             self._save_gra(tensor=x_grad_max, img_name=img_name, tso_name='x_grad_max', epoch=epoch)
+            """
             # self._save_mask(tensor=w_gra_vi, img_name=img_name, tso_name='w_gra_vi', epoch=epoch)
             # self._save_mask(tensor=w_gra_ir, img_name=img_name, tso_name='w_gra_ir', epoch=epoch)
         loss_total = loss_total_bi + self.delta * loss_total_uni + loss_total_lac

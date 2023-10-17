@@ -1,6 +1,6 @@
 # SRAFusion
 
-"Semantic Region Adaptive Fusion of Infrared and Visible Images via Dual-DeepLab Guidance"
+[Semantic Region Adaptive Fusion of Infrared and Visible Images via Dual-DeepLab Guidance](https://ieeexplore.ieee.org/document/10273836?source=authoralert)
 
 ## 1. To Train
 ### 1.1 To preTrain visible segmentation

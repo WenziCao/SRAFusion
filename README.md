@@ -24,9 +24,11 @@ Run `python main.py -tort test -mode test_ISeg`
 
 ### 2.3 To test fuse
 One_stage_fuse: set MODEL.FUSION_NET.STG_TYPE:'SRA_OSTG'
+
 Run `python main.py -tort test -mode test_fuse`
 
 Two_stage_fuse: set MODEL.FUSION_NET.STG_TYPE:'SRA_TSTG'
+
 Run `python main.py -tort test -mode test_fuse`
 
 ## 3. For quantitative evaluation
